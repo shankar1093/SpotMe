@@ -1,0 +1,17 @@
+{
+  "uuid": "18d2ef2b-269d-4ae0-bd0f-1dbfc0e17958",
+  "shortName": "RCOS_accel",
+  "longName": "RCOS_accel",
+  "companyName": "PebbleFit",
+  "versionCode": 1,
+  "versionLabel": "1.0.0",
+  "watchapp": {
+    "watchface": false
+  },
+  "appKeys": {
+    "dummy": 0
+  },
+  "resources": {
+    "media": []
+  }
+}
