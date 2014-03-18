@@ -1,2 +1,11 @@
 build/
 temp/
+
+.waf*
+.lock-waf*
+*.dat
+waf
+tools
+lib
+include
+pebble_app.ld
