@@ -1,41 +1,67 @@
 
-var direction = localStorage.getItem("data");
+var value2 = localStorage.getItem("L");
+console.log(value2);
 
-// if(!direction){
-// 	direction = "up";
-// }
+var arr =[];
+function populate_array(X, Y, Z){
+	console.log("inside this function");
+	arr.push(X);
+	arr.push(Y);
+	arr.push(Z);
 
-// function senddirection(direction) {
-//  // var response;
-//   var req = new XMLHttpRequest();
-//   console.log("Starting http get -- 33");
-//   //console.log(direction);
-//   req.open("GET", "http://10.232.112.77:8080/"+ direction, true);
+	var req = new XMLHttpRequest();
+	console.log("GET", )
 
-//   req.send();
-// }
+}
 
-console.log("MAIN READY");
 
+function write_file(){
+	console.log("eric is gay")
+	var fs = require('fs');
+
+	fs.writeFile("/tmp/test", "Hey there!", function(err) {
+	    if(err) {
+	        console.log(err);
+	    } else {
+	        console.log("The file was saved!");
+	    }
+	}); 
+
+}
 Pebble.addEventListener("ready",
                         function(e) {
                           console.log("ready!" + e.ready);
-						  console.log(JSON.stringify(e.data));
-						  console.log("preparing location"); 
-						  console.log("I am gonna log data today bitch");
+						  
+
+						  // console.log(JSON.stringify(e.data));
+						  console.log("getting ready to recieve data from the pebble");
                        });
 
 Pebble.addEventListener("appmessage",
-	function(e) {
-		console.log(e);
-		accel_data = e.payload.value1;
-        console.log(accel_data);
-	
-		//senddirection(direction);
+						function(e) {
+						  console.log("message recieved");
+						  var X = e.payload.x_axis;
+
+						  // if(X=="select"){
+						  // 	console.log("something");
+						  // }
+						  var Y = e.payload.y_axis;
+						  var Z = e.payload.z_axis;
+						  //populate_array(X,Y,Z);
+						  console.log(arr.length);
+						  // if(arr.length == 30){
+						  // 	write_file();
+						  // }
+
+						  
 
 
-		}
-	);
+						  //use this to display accel values. 
+						  console.log(X);
+						  console.log(Y);
+						  console.log(Z);
+							
+						});
 
 
 
